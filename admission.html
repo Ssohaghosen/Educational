@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bright Future Institute – Admission Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --bfi-primary: #0d6efd;
+      --bfi-accent: #4f46e5;
+      --bfi-muted: #f8fafc;
+    }
+    body { background: var(--bfi-muted); }
+    .bfi-card { border: 0; border-radius: 1rem; box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+    .bfi-title { font-weight: 800; letter-spacing: .3px; }
+    .stepper { display:flex; gap: 1rem; justify-content:center; margin-bottom:1.25rem; flex-wrap: wrap; }
+    .stepper .step { display:flex; align-items:center; gap:.5rem; padding: .5rem .9rem; border-radius: 999px; background:#fff; border:1px dashed rgba(13,110,253,.35); }
+    .stepper .step .bubble { width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background: var(--bfi-primary); color:#fff; font-weight:700; }
+    .stepper .step.active { border-style: solid; background: linear-gradient(0deg,#fff,#fff), linear-gradient(90deg, var(--bfi-primary), var(--bfi-accent)); background-origin: border-box; background-clip: padding-box, border-box; }
+    .section-badge { font-size:.8rem; font-weight:700; color: var(--bfi-accent); text-transform: uppercase; letter-spacing:.08em; }
+    .req::after { content:" *"; color:#dc3545; font-weight:700; }
+    .preview { border:1px dashed #cbd5e1; border-radius:.75rem; padding: .75rem; background:#fff; }
+    .floating-hint { font-size:.85rem; color:#475569; }
+    .divider { height:1px; background:linear-gradient(90deg,transparent, rgba(2,6,23,.2), transparent); margin: 1rem 0; }
+    .fee-box { background:#fff; border:1px solid #e2e8f0; border-radius:.75rem; padding: .75rem; }
+    .form-check .form-check-input:checked { background-color: var(--bfi-accent); border-color: var(--bfi-accent); }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Bright Future Institute</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Admission</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-5 text-center">
+    <div class="container">
+      <h1 class="display-6 bfi-title">Admission Form</h1>
+      <p class="text-secondary mb-0">Apply now for Digital Marketing, Web Development, or Graphic Design.</p>
+    </div>
+  </header>
+
+  <main class="container pb-5">
+    <!-- Stepper (visual only) -->
+    <div class="stepper">
+      <div class="step active"><span class="bubble">1</span><span>Personal</span></div>
+      <div class="step"><span class="bubble">2</span><span>Course</span></div>
+      <div class="step"><span class="bubble">3</span><span>Guardian</span></div>
+      <div class="step"><span class="bubble">4</span><span>Education</span></div>
+      <div class="step"><span class="bubble">5</span><span>Uploads & Consent</span></div>
+    </div>
+
+    <form id="admissionForm" class="needs-validation" novalidate>
+      <div class="bfi-card bg-white p-4 p-md-5">
+        <!-- Personal Information -->
+        <span class="section-badge">Section 1</span>
+        <h5 class="mb-3">Personal Information</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label req">Full Name</label>
+            <input type="text" class="form-control" name="fullName" placeholder="e.g., Sohag Hosen" required />
+            <div class="invalid-feedback">Please enter your full name.</div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label req">Date of Birth</label>
+            <input type="date" class="form-control" name="dob" required />
+            <div class="invalid-feedback">Please select your date of birth.</div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label req">Gender</label>
+            <select class="form-select" name="gender" required>
+              <option value="" selected disabled>Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+            <div class="invalid-feedback">Please choose a gender.</div>
+          </div>
+          <div class="col-12">
+            <label class="form-label req">Present Address</label>
+            <input type="text" class="form-control" name="address" placeholder="House, Road, Area, City" required />
+            <div class="invalid-feedback">Please provide your address.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label req">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="name@example.com" required />
+            <div class="invalid-feedback">Enter a valid email.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label req">Phone</label>
+            <input type="tel" pattern="[0-9+\-\s]{6,}" class="form-control" name="phone" placeholder="e.g., +8801XXXXXXXXX" required />
+            <div class="invalid-feedback">Enter a valid phone number.</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Course Selection -->
+        <span class="section-badge">Section 2</span>
+        <h5 class="mb-3">Course Selection</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label req">Choose Course</label>
+            <select class="form-select" id="course" required>
+              <option value="" selected disabled>Select a course</option>
+              <option value="dm" data-fee="12000">Digital Marketing</option>
+              <option value="wd" data-fee="15000">Web Development</option>
+              <option value="gd" data-fee="13000">Graphic Design</option>
+            </select>
+            <div class="invalid-feedback">Please select a course.</div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label req">Batch Timing</label>
+            <select class="form-select" id="batch" required>
+              <option value="" disabled selected>Select</option>
+              <option>Morning (9–11 AM)</option>
+              <option>Afternoon (2–4 PM)</option>
+              <option>Evening (7–9 PM)</option>
+              <option>Weekend (Fri–Sat)</option>
+            </select>
+            <div class="invalid-feedback">Please choose a batch.</div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label req">Duration</label>
+            <select class="form-select" id="duration" required>
+              <option value="" disabled selected>Select</option>
+              <option value="2">2 Months</option>
+              <option value="3">3 Months</option>
+              <option value="6">6 Months</option>
+            </select>
+            <div class="invalid-feedback">Please select duration.</div>
+          </div>
+          <div class="col-12">
+            <div class="fee-box d-flex flex-wrap align-items-center gap-3">
+              <div>
+                <strong>Base Fee:</strong> <span id="baseFee">—</span> BDT
+              </div>
+              <div>
+                <strong>Materials (optional):</strong>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="materials" />
+                  <label class="form-check-label" for="materials">Printed notes (+1000 BDT)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="certificate" />
+                  <label class="form-check-label" for="certificate">Extra certificate copy (+500 BDT)</label>
+                </div>
+              </div>
+              <div class="ms-auto">
+                <strong>Total:</strong> <span id="totalFee">—</span> BDT
+              </div>
+            </div>
+            <p class="floating-hint mt-1">Fees auto-calculated based on course & options. Duration does not change fee (you can edit logic if needed).</p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Guardian Info -->
+        <span class="section-badge">Section 3</span>
+        <h5 class="mb-3">Guardian Information</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label req">Guardian Name</label>
+            <input type="text" class="form-control" name="guardianName" required />
+            <div class="invalid-feedback">Guardian name is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label req">Guardian Phone</label>
+            <input type="tel" pattern="[0-9+\-\s]{6,}" class="form-control" name="guardianPhone" required />
+            <div class="invalid-feedback">Enter a valid guardian phone.</div>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Relationship</label>
+            <input type="text" class="form-control" name="relationship" placeholder="Father / Mother / Brother / Sister / Other" />
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Education -->
+        <span class="section-badge">Section 4</span>
+        <h5 class="mb-3">Educational Background</h5>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label req">Highest Degree</label>
+            <select class="form-select" name="degree" required>
+              <option value="" disabled selected>Select</option>
+              <option>SSC</option>
+              <option>HSC</option>
+              <option>Diploma</option>
+              <option>Bachelor</option>
+              <option>Masters</option>
+              <option>Other</option>
+            </select>
+            <div class="invalid-feedback">Please choose a degree.</div>
+          </div>
+          <div class="col-md-5">
+            <label class="form-label">Institute</label>
+            <input type="text" class="form-control" name="eduInstitute" placeholder="Name of School/College/University" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Passing Year</label>
+            <input type="number" min="1990" max="2099" step="1" class="form-control" name="passingYear" placeholder="e.g., 2024" />
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Uploads & Consent -->
+        <span class="section-badge">Section 5</span>
+        <h5 class="mb-3">Uploads & Consent</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label req">Upload Photo (JPG/PNG)</label>
+            <input type="file" class="form-control" accept="image/*" required />
+            <div class="invalid-feedback">Please upload a photo.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Upload NID/ID (PDF/JPG)</label>
+            <input type="file" class="form-control" accept="application/pdf,image/*" />
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="terms" required />
+              <label class="form-check-label req" for="terms"> I confirm that the information provided is true and I agree to the institute policies.</label>
+              <div class="invalid-feedback">You must accept before submitting.</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="preview d-flex flex-column flex-md-row gap-3 align-items-start align-items-md-center">
+              <div>
+                <div class="text-uppercase text-muted" style="font-size:.75rem;">Application ID (auto):</div>
+                <div id="appId" class="fs-5 fw-bold">—</div>
+              </div>
+              <div class="ms-md-auto"><span class="floating-hint">ID is generated locally on this page for your reference.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 d-flex gap-2">
+          <button type="submit" class="btn btn-primary px-4">Submit Application</button>
+          <button type="reset" class="btn btn-outline-secondary">Reset</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Application Submitted</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-1">Thank you for applying to <strong>Bright Future Institute</strong>!</p>
+          <p class="mb-0">Your Application ID: <strong id="modalAppId"></strong></p>
+        </div>
+        <div class="modal-footer border-0">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Bootstrap validation
+    (() => {
+      const form = document.getElementById('admissionForm');
+      form.addEventListener('submit', (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault(); // demo only; remove this to actually submit
+          // Show success modal
+          const appId = document.getElementById('appId').textContent;
+          document.getElementById('modalAppId').textContent = appId;
+          const modal = new bootstrap.Modal(document.getElementById('successModal'));
+          modal.show();
+        }
+        form.classList.add('was-validated');
+      });
+    })();
+
+    // Simple App ID generator
+    function generateId() {
+      const now = new Date();
+      const pad = (n) => String(n).padStart(2,'0');
+      const id = `BFI-${now.getFullYear()}${pad(now.getMonth()+1)}${pad(now.getDate())}-${Math.random().toString(36).slice(2,7).toUpperCase()}`;
+      document.getElementById('appId').textContent = id;
+    }
+    generateId();
+
+    // Fee calculator
+    const courseEl = document.getElementById('course');
+    const materialsEl = document.getElementById('materials');
+    const certificateEl = document.getElementById('certificate');
+    const baseFeeEl = document.getElementById('baseFee');
+    const totalFeeEl = document.getElementById('totalFee');
+
+    function updateFee() {
+      let base = 0;
+      const selected = courseEl.options[courseEl.selectedIndex];
+      if (selected && selected.dataset.fee) base = parseInt(selected.dataset.fee, 10);
+      let extra = 0;
+      if (materialsEl.checked) extra += 1000;
+      if (certificateEl.checked) extra += 500;
+      baseFeeEl.textContent = base ? base.toLocaleString() : '—';
+      totalFeeEl.textContent = base ? (base + extra).toLocaleString() : '—';
+    }
+
+    [courseEl, materialsEl, certificateEl].forEach(el => el.addEventListener('change', updateFee));
+    updateFee();
+  </script>
+</body>
+</html>
